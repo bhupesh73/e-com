@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <button onclick="addToCart('product123')">Add to Cart</button>
+
+  <script>
+    function addToCart(productId) {
+      // Make an HTTP POST request to the server
+      axios.post('/api/cart', { productId })
+        .then(response => {
+          // Provide feedback to the user (optional)
+          alert('Item added to cart!');
+        })
+        .catch(error => {
+          // Handle any errors that occur during the request (optional)
+          console.error('Error adding item to cart:', error);
+        });
+    }
+  </script>
+</body>
+</html>
